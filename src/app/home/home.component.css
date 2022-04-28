@@ -25,20 +25,29 @@
 	margin-left: 25px;
 }
 
-#welcome {
-	position: relative;
-	top: 40px;
-	display: inline-block;
+#welcome1, #welcome2 {
+	font-size: 1.25rem;
+	text-align: left;
+	padding: 25px;
 }
 
-#welcome img {
-	max-width: 500px;
-	float: right;
+h1, h2 {
+	font-weight: bold;
 }
 
-@media only screen and (max-width: 768px) {
-	#welcome img {
-		max-width: 75%;
-		min-width: 300px;
-	}
+#welcome1 img {
+	height: 250px;
+}
+
+#welcome2 {
+	background-color: rgba(242,188,0,0.7);
+	max-width: 85%;
+}
+
+#welcome2 a {
+	color: black;
+}
+
+@media only screen and (max-width: 950px) {
+
 }

@@ -1,0 +1,42 @@
+.linkFilters {
+	margin: 5px 10px;
+	display: inline-block;
+}
+
+td {
+	padding: 5px 15px;
+	max-width: 150px;
+}
+
+th {
+	padding: 5px 15px;
+	text-align: left;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+	background: black;
+	color: white;
+}
+
+table {
+	border-collapse: collapse;
+	margin-top: 25px;
+}
+
+tbody > tr > td:nth-child(7) {
+	visibility: hidden;
+}
+
+tbody > tr:hover > td:nth-child(7) {
+	visibility: visible;
+}
+
+.alwaysShow {
+	visibility: visible !important;
+}
+
+img {
+	height: 100px;
+}

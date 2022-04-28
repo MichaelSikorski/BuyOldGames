@@ -1,51 +1,5 @@
-<!--<mat-toolbar role="navigation">
-	<div id="logo">
-		<a href="" [routerLink]="['./']" ><img [src]="logoSrc" width="200px" /></a>
-		<a href="" [routerLink]="['./']" ><img width="200px" /></a>
-		<span>Buy Old Games</span>
-	</div>
-	
-	<div id="cart">
-		<a [routerLink]="['./cart']">View Cart ({{ itemsInCart }})</a>
-		<a [routerLink]="['./cart']">View Cart (0)</a>-
-	</div>
-</mat-toolbar> -->
-<mat-toolbar role="navigation">
-	<div id="logo">
-		<a href="" [routerLink]="['./']" ><img [src]="logoSrc" width="100px" /></a>
-		<span>	<!-- Content shifts slightly when moving between home and browse components -->
-	<pre>
-Buy 
-Old 
-Games
-	</pre>
-		</span>
-	</div>
-	<span class="nav-spacer" style="order:2;"></span>
-	<div class="large_header_links" [class.small_header_links]="mobileQuery.matches" id="header_links">
-	<span>Browse by: </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'name'}" >Name</a><span> / </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'platform'}" >Platform</a><span> / </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'genre'}" >Genre</a><span> / </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'release'}" >Release Date</a>
-	</div>
-	<span class="nav-spacer" style="order:4;"></span>
-	<div class="large_searchbox" [class.small_searchbox]="mobileQuery.matches" id="searchbox">
-		<!--<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-		  <input name="searchstring" type="text" ngModel required #searchstring="ngModel">
-		  <button>Search</button>
-		</form>-->
-		<form novalidate>
-		  <input name="searchstring" type="text" ngModel required>
-		  <button>Search</button>
-		</form>
-	</div>
-	<span class="nav-spacer" style="order:6;"></span>
-	<div id="cart" style="order:7;">
-		<!--<a [routerLink]="['./cart']">View Cart ({{ itemsInCart }})</a>-->
-		<a [routerLink]="['./cart']">View Cart (0)</a>-
-	</div>
-</mat-toolbar>
+
+<app-nav-bar></app-nav-bar>
 
 <div id="article" role="main">
 	<router-outlet></router-outlet>

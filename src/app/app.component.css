@@ -1,49 +1,6 @@
-mat-toolbar {
-	flex-wrap: wrap;
-	max-width: 1024px;
-	margin: 0 auto;
-}
-
-#logo {
-	display: flex;
-	font-size: 1.25rem;
-	font-weight: bold;
-}
-
-#logo a {
-	height: fit-content;
-}
-
-.nav-spacer {
-	flex: 1 0.5 auto;
-}
-
-#header_links {
-	/* order: 5; */		/* Set this at when screen <776px */
-}
-
-#searchbox {
-	/* order: 3; */		/* Set this at when screen <776px */
-}
-
-.large_searchbox {
-	order: 5;
-}
-
-.small_searchbox {
-	order: 3;
-}
-
-.large_header_links {
-	order: 3;
-}
-
-.small_header_links {
-	order: 5;
-	margin-top: 25px;
-}
 
 #article {
 	max-width: 1024px;
 	margin: 0 auto;
-}
+	padding-left: 25px;
+}  

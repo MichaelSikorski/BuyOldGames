@@ -1,0 +1,64 @@
+mat-toolbar {
+	flex-wrap: wrap;
+	max-width: 1024px;
+	margin: 0 auto;
+	height: auto;
+	background-color: rgba(0,0,0,0);
+	justify-content: space-between;
+}
+
+#logo {
+	display: flex;
+	font-size: 1.25rem;
+	font-weight: bold;
+	order: 1;
+}
+
+#logo a {
+	height: fit-content;
+}
+
+.nav-spacer {
+	flex: 1 0.5 auto;
+}
+
+.searchbox {
+	margin-left: 10px;
+	margin-right: 10px;
+	order: 3;
+}
+
+.header_links {
+	order: 2;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.header_links a {
+	margin: 0 5px 0;
+}
+
+#cart {
+	margin-top: 10px;
+	margin-right: 10px;
+	order: 4;
+}
+
+#cart button {
+	height: 55px;
+	width: 55px;
+	background-repeat: no-repeat;
+	background-color: rgba(0,0,0,0);
+	background-size: 50px;
+	border: none;
+}
+
+@media only screen and (max-width: 950px) {
+	mat-toolbar {
+		flex-direction: column;
+	}
+	.header_links {
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+}

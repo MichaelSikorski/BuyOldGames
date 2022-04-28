@@ -1,11 +1,29 @@
-<div id="welcome">
+<div id="welcome1">
 	<h1>Welcome to Buy Old Games!</h1>
-	<img id="img1" src="{{image1src}}" />
+	<img id="img1" src="{{image1src}}" alt="Picture of a knight on a horse" />
+	<img id="img2" src="{{image2src}}" alt="Picture of a futuristic spacecraft" />
 	<h2>Here are some of the reasons to buy from us:</h2>
 	<ul>
 		<li>All games are 100% guaranteed to work</li>
 		<li>We source only official and original copies</li>
 		<li>Free shipping on all orders</li>
 	</ul>
-	<img id="img2" src="{{image2src}}" />
+</div>
+
+<div id="welcome2">
+	<h2>View our current offerings by selecting a category below</h2>
+	<ul>
+		<li>
+			<a href="" [routerLink]="['../browse']" [queryParams]="{by:'name'}" >Name</a>
+		</li>
+		<li>
+			<a href="" [routerLink]="['../browse']" [queryParams]="{by:'platform'}" >Platform</a>
+		</li>
+		<li>
+			<a href="" [routerLink]="['../browse']" [queryParams]="{by:'genre'}" >Genre</a>
+		</li>
+		<li>
+			<a href="" [routerLink]="['../browse']" [queryParams]="{by:'release'}" >Release Date</a>
+		</li>
+	</ul>
 </div>

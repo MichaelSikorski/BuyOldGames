@@ -1,0 +1,27 @@
+td {
+	padding: 5px 15px;
+	max-width: 150px;
+}
+
+th {
+	padding: 5px 15px;
+	text-align: left;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+	background: black;
+	color: white;
+}
+
+table {
+	border-collapse: collapse;
+	margin-top: 25px;
+}
+
+.subtotal {
+	font-weight: bold;
+	font-size: 125%;
+	text-align: right;
+}

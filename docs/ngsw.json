@@ -1,0 +1,141 @@
+{
+  "configVersion": 1,
+  "timestamp": 1651185634868,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.badff044e5bcf523.js",
+        "/manifest.webmanifest",
+        "/polyfills.196dfa03b50ba6cb.js",
+        "/runtime.6b86532ecaf8dff0.js",
+        "/styles.a65fa9cbccc99c62.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/cart.jpg",
+        "/assets/game_imgs/623b658ff439cd87206fef41.jpg",
+        "/assets/game_imgs/623b663af439cd87206fef42.jpg",
+        "/assets/game_imgs/623b6657f439cd87206fef43.jpg",
+        "/assets/game_imgs/623b668af439cd87206fef45.jpg",
+        "/assets/game_imgs/623b66e3f439cd87206fef46.jpg",
+        "/assets/game_imgs/623b66f9f439cd87206fef47.jpg",
+        "/assets/game_imgs/623b6784f439cd87206fef48.jpg",
+        "/assets/game_imgs/623b67b3f439cd87206fef49.jpg",
+        "/assets/game_imgs/623b681cf439cd87206fef4a.jpg",
+        "/assets/game_imgs/623b68acf439cd87206fef4b.jpg",
+        "/assets/game_imgs/623b6a8cf439cd87206fef4c.jpg",
+        "/assets/game_imgs/623b6ab4f439cd87206fef4d.jpg",
+        "/assets/game_imgs/623b6acff439cd87206fef4e.jpg",
+        "/assets/game_imgs/623b6ae3f439cd87206fef4f.jpg",
+        "/assets/game_imgs/623b6b04f439cd87206fef50.jpg",
+        "/assets/game_imgs/623b6b6ef439cd87206fef51.jpg",
+        "/assets/game_imgs/623b6b97f439cd87206fef52.jpg",
+        "/assets/game_imgs/623b6bf6f439cd87206fef53.jpg",
+        "/assets/game_imgs/623b6c0cf439cd87206fef54.jpg",
+        "/assets/game_imgs/623b6c27f439cd87206fef55.jpg",
+        "/assets/game_imgs/623b6d29f439cd87206fef56.jpg",
+        "/assets/game_imgs/623b6d78f439cd87206fef57.jpg",
+        "/assets/game_imgs/623b6da5f439cd87206fef58.jpg",
+        "/assets/game_imgs/623b6dcbf439cd87206fef59.jpg",
+        "/assets/game_imgs/623b6df9f439cd87206fef5a.jpg",
+        "/assets/games_list.json",
+        "/assets/home_fantasy.jpg",
+        "/assets/home_scifi.jpg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/logo.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/cart.jpg": "5cdcda4f43885e5e7d3e42b40a2bb3d74659c8a3",
+    "/assets/game_imgs/623b658ff439cd87206fef41.jpg": "917fd9704194f1781d1ea733613d49be708fc5fb",
+    "/assets/game_imgs/623b663af439cd87206fef42.jpg": "6bda593e29ba373d96184f8bc4e0c8e6fd6600ed",
+    "/assets/game_imgs/623b6657f439cd87206fef43.jpg": "db3030f56933be539c8d81dab3a596c40fa57884",
+    "/assets/game_imgs/623b668af439cd87206fef45.jpg": "e977a6bf230a740a76f6d10c1629694b49a34781",
+    "/assets/game_imgs/623b66e3f439cd87206fef46.jpg": "e580429659fbac95b31770a4a0334553b15d5db4",
+    "/assets/game_imgs/623b66f9f439cd87206fef47.jpg": "4a6e169c5c836c88bb4e9c87fef8725dd6903671",
+    "/assets/game_imgs/623b6784f439cd87206fef48.jpg": "69d4901c5842e6eafa5d7784893453e01db160b8",
+    "/assets/game_imgs/623b67b3f439cd87206fef49.jpg": "1258a7b5a506dca8e51cec0c1065593458116c76",
+    "/assets/game_imgs/623b681cf439cd87206fef4a.jpg": "85d7effeeef267079a6d47177de08fce156192d4",
+    "/assets/game_imgs/623b68acf439cd87206fef4b.jpg": "811b256fe2f2c61796c86018c6c9a54d38836d5d",
+    "/assets/game_imgs/623b6a8cf439cd87206fef4c.jpg": "ccfe17eb3665ba47f37a9ca80056975a01293c36",
+    "/assets/game_imgs/623b6ab4f439cd87206fef4d.jpg": "285ef78d8a28496ad5c91599838385cfb097f762",
+    "/assets/game_imgs/623b6acff439cd87206fef4e.jpg": "5a666a4150d1a7f6c281f2a8467c0d4914b677d6",
+    "/assets/game_imgs/623b6ae3f439cd87206fef4f.jpg": "1da757ed0362992324499015b592a7cf8212421f",
+    "/assets/game_imgs/623b6b04f439cd87206fef50.jpg": "26b63eea6832e2b44a071bfbe961bb5e59284484",
+    "/assets/game_imgs/623b6b6ef439cd87206fef51.jpg": "14b206ff5200d0ae5bc2734f69eb2df032c41708",
+    "/assets/game_imgs/623b6b97f439cd87206fef52.jpg": "20a13a780237d0768aab574b45b0a05413009e2e",
+    "/assets/game_imgs/623b6bf6f439cd87206fef53.jpg": "1cf0fced50a27ecfd7d988bef7a3af592336548f",
+    "/assets/game_imgs/623b6c0cf439cd87206fef54.jpg": "5b09a6b789e73746334b4399d2c209933279757d",
+    "/assets/game_imgs/623b6c27f439cd87206fef55.jpg": "e1548c20d48898fa3776efa225743be218540a73",
+    "/assets/game_imgs/623b6d29f439cd87206fef56.jpg": "db9e0ab5092741605b1295b4bac898a940908171",
+    "/assets/game_imgs/623b6d78f439cd87206fef57.jpg": "7b2232eca941fb23fc5bedffed6e3b5bf885f505",
+    "/assets/game_imgs/623b6da5f439cd87206fef58.jpg": "38ea861e07abd55929abb9c72c5dc07adb5207fc",
+    "/assets/game_imgs/623b6dcbf439cd87206fef59.jpg": "09e77e3c56ce7dc9cac9a3ebff56064ca3a5b333",
+    "/assets/game_imgs/623b6df9f439cd87206fef5a.jpg": "0153ea5ee5cc5f86c01285f29e43d5947141c7aa",
+    "/assets/games_list.json": "6fb4b1175ba7a994f72e0aee16757242bbf9e157",
+    "/assets/home_fantasy.jpg": "995e52d74cbed4068ca714498380c28b0cb3eebe",
+    "/assets/home_scifi.jpg": "2b6d001383b4599b3850a2f0744c3608f2907821",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/logo.jpg": "79423cd1609852c839d7fea63e84550410365fd5",
+    "/favicon.ico": "a59a49684607dbaa1b9b149a08de15fb4730ed42",
+    "/index.html": "c6909984465fbbbf6b62e8bb70e26064c7fc4a14",
+    "/main.badff044e5bcf523.js": "6719151284d4981721a9068c284980351217aa97",
+    "/manifest.webmanifest": "52c2982ea3410ac266e90e632745334d09ed71a5",
+    "/polyfills.196dfa03b50ba6cb.js": "a61395955ca56fc2891b6c5a33b757690637298f",
+    "/runtime.6b86532ecaf8dff0.js": "df6e0827cbcc2814ced4d1a0e07d7300e8648875",
+    "/styles.a65fa9cbccc99c62.css": "1254deaf994c6329fb5400966882fa80facbf61c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

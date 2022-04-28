@@ -1,0 +1,225 @@
+[{
+  "_id": "623b658ff439cd87206fef41",
+  "title": "Chrono Trigger",
+  "platform": "SNES",
+  "genre": "Action",
+  "release": "1995-01-01T06:00:00Z",
+  "price": "25.99",
+  "stock": "0"
+},{
+  "_id": "623b663af439cd87206fef42",
+  "title": "Super Metroid",
+  "platform": "SNES",
+  "genre": "Action",
+  "release": "1994-01-01T06:00:00Z",
+  "price": "20.99",
+  "stock": "3"
+  },
+ {
+  "_id": "623b6657f439cd87206fef43",
+  "title": "Super Mario World 2: Yoshi's Island",
+  "platform": "SNES",
+  "genre": "Action",
+  "release": "1995-01-01T06:00:00Z",
+  "price": "15.99",
+  "stock": "6"
+  }
+,{
+  "_id": "623b668af439cd87206fef45",
+  "title": "The Legend of Zelda: A Link to the Past",
+  "platform": "SNES",
+  "genre": "Action",
+  "release": "1991-01-01T06:00:00Z",
+  "price": "35.99",
+  "stock": "0"
+  }
+,{
+  "_id": "623b66e3f439cd87206fef46",
+  "title": "Final Fantasy VI",
+  "platform": "SNES",
+  "genre": "Action",
+  "release": "1994-01-01T06:00:00Z",
+  "price": "17.99",
+  "stock": "4"
+  }
+,{
+  "_id": "623b66f9f439cd87206fef47",
+  "title": "Castlevania: Bloodlines",
+  "platform": "Sega Genesis",
+  "genre": "Action Platformer",
+  "release": "1994-01-01T06:00:00Z",
+  "price": "19.99",
+  "stock": "5"
+  }
+,{
+  "_id": "623b6784f439cd87206fef48",
+  "title": "Mortal Kombat II",
+  "platform": "Sega Genesis",
+  "genre": "Fighting",
+  "release": "1994-01-01T06:00:00Z",
+  "price": "10.99",
+  "stock": "7"
+  }
+,{
+  "_id": "623b67b3f439cd87206fef49",
+  "title": "Streets of Rage",
+  "platform": "Sega Genesis",
+  "genre": "Fighting",
+  "release": "1991-01-01T06:00:00Z",
+  "price": "24.99",
+  "stock": "6"
+  }
+,{
+  "_id": "623b681cf439cd87206fef4a",
+  "title": "Ghostbusters",
+  "platform": "Sega Genesis",
+  "genre": "Platformer",
+  "release": "1990-01-01T06:00:00Z",
+  "price": "8.99",
+  "stock": "10"
+  }
+,{
+  "_id": "623b68acf439cd87206fef4b",
+  "title": "Sonic The Hedgehog 2",
+  "platform": "Sega Genesis",
+  "genre": "Platformer",
+  "release": "1992-01-01T06:00:00Z",
+  "price": "35.99",
+  "stock": "2"
+  }
+,{
+  "_id": "623b6a8cf439cd87206fef4c",
+  "title": "Metal Gear Solid",
+  "platform": "Playstation 1",
+  "genre": "Action",
+  "release": "1998-01-01T06:00:00Z",
+  "price": "35.99",
+  "stock": "1"
+  }
+,{
+  "_id": "623b6ab4f439cd87206fef4d",
+  "title": "Resident Evil 2",
+  "platform": "Playstation 1",
+  "genre": "Horror",
+  "release": "1998-01-01T06:00:00Z",
+  "price": "25.99",
+  "stock": "5"
+  }
+,{
+  "_id": "623b6acff439cd87206fef4e",
+  "title": "Silent Hill",
+  "platform": "Playstation 1",
+  "genre": "Horror",
+  "release": "1999-01-01T06:00:00Z",
+  "price": "35.99",
+  "stock": "2"
+  }
+,{
+  "_id": "623b6ae3f439cd87206fef4f",
+  "title": "Gran Turismo 2",
+  "platform": "Playstation 1",
+  "genre": "Racing",
+  "release": "1999-01-01T06:00:00Z",
+  "price": "5.99",
+  "stock": "15"
+  }
+,{
+  "_id": "623b6b04f439cd87206fef50",
+  "title": "Wipeout 3",
+  "platform": "Playstation 1",
+  "genre": "Racing",
+  "release": "1999-01-01T06:00:00Z",
+  "price": "5.99",
+  "stock": "11"
+  }
+,{
+  "_id": "623b6b6ef439cd87206fef51",
+  "title": "Donkey Kong",
+  "platform": "Game Boy",
+  "genre": "Platformer",
+  "release": "1994-01-01T06:00:00Z",
+  "price": "25.99",
+  "stock": "0"
+  }
+,{
+  "_id": "623b6b97f439cd87206fef52",
+  "title": "The Final Fantasy Legend",
+  "platform": "Game Boy",
+  "genre": "RPG",
+  "release": "1990-01-01T06:00:00Z",
+  "price": "22.99",
+  "stock": "3"
+  }
+,{
+  "_id": "623b6bf6f439cd87206fef53",
+  "title": "Kirby's Dream Land",
+  "platform": "Game Boy",
+  "genre": "Platformer",
+  "release": "1992-01-01T06:00:00Z",
+  "price": "25.99",
+  "stock": "5"
+  }
+,{
+  "_id": "623b6c0cf439cd87206fef54",
+  "title": "Mega Man 5",
+  "platform": "Game Boy",
+  "genre": "Platformer",
+  "release": "1994-01-01T06:00:00Z",
+  "price": "26.99",
+  "stock": "3"
+  }
+,{
+  "_id": "623b6c27f439cd87206fef55",
+  "title": "Pokemon Red",
+  "platform": "Game Boy",
+  "genre": "RPG",
+  "release": "1998-01-01T06:00:00Z",
+  "price": "45.99",
+  "stock": "2"
+  }
+,{
+  "_id": "623b6d29f439cd87206fef56",
+  "title": "The Legend of Zelda: Ocarina of Time",
+  "platform": "Nintendo 64",
+  "genre": "Action-Adventure",
+  "release": "1998-01-01T06:00:00Z",
+  "price": "45.99",
+  "stock": "5"
+  }
+,{
+  "_id": "623b6d78f439cd87206fef57",
+  "title": "Super Mario 64",
+  "platform": "Nintendo 64",
+  "genre": "Platformer",
+  "release": "1996-01-01T06:00:00Z",
+  "price": "65.99",
+  "stock": "2"
+  }
+,{
+  "_id": "623b6da5f439cd87206fef58",
+  "title": "The Legend of Zelda: Majora's Mask",
+  "platform": "Nintendo 64",
+  "genre": "Action-Adventure",
+  "release": "2000-01-01T06:00:00Z",
+  "price": "49.99",
+  "stock": "2"
+  }
+,{
+  "_id": "623b6dcbf439cd87206fef59",
+  "title": "Banjo-Kazooie",
+  "platform": "Nintendo 64",
+  "genre": "Action-Adventure",
+  "release": "1998-01-01T06:00:00Z",
+  "price": "38.99",
+  "stock": "3"
+  }
+,{
+  "_id": "623b6df9f439cd87206fef5a",
+  "title": "Perfect Dark",
+  "platform": "Nintendo 64",
+  "genre": "FPS",
+  "release": "2000-01-01T06:00:00Z",
+  "price": "27.99",
+  "stock": "5"
+  }
+]

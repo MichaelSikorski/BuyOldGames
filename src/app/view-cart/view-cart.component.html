@@ -1,0 +1,36 @@
+<ng-container *ngIf="getCartSize() == 0">
+	<h2>Shopping cart is empty!</h2>
+</ng-container>
+
+<ng-container *ngIf="getCartSize() > 0">
+	<h2>Your shopping cart contains the following items: </h2>
+	
+	<table class="table table-striped border mt-1">
+		<thead>
+			<tr>
+				<th scope="col"></th>
+				<th scope="col">Title</th>
+				<th scope="col">Platform</th>
+				<th scope="col">Genre</th>
+				<th scope="col">Release Date</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let game of getCartItems()" >
+				<td><img style="width:100px" [src]="boxArt(game)"/></td>
+				<td>{{game.title}}</td> 
+				<td>{{game.platform}}</td>
+				<td>{{game.genre}}</td>
+				<td>{{game.release | date:'yyyy' }}</td>
+				<td>${{game.price}}</td>
+
+				<td><button (click)="removeFromCart(game)" >Remove from Cart</button></td>
+
+			</tr>
+			<tr class="subtotal">
+				<td colspan="6">Subtotal: {{ getSubtotal() | currency }}</td>
+			</tr>
+		</tbody>
+	</table>
+</ng-container>
