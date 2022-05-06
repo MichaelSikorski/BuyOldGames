@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1651185955380,
+  "timestamp": 1651873941055,
   "index": "https://michaelsikorski.github.io/BuyOldGames/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://michaelsikorski.github.io/BuyOldGames/favicon.ico",
         "https://michaelsikorski.github.io/BuyOldGames/index.html",
-        "https://michaelsikorski.github.io/BuyOldGames/main.badff044e5bcf523.js",
+        "https://michaelsikorski.github.io/BuyOldGames/main.a528228117537550.js",
         "https://michaelsikorski.github.io/BuyOldGames/manifest.webmanifest",
         "https://michaelsikorski.github.io/BuyOldGames/polyfills.196dfa03b50ba6cb.js",
         "https://michaelsikorski.github.io/BuyOldGames/runtime.6b86532ecaf8dff0.js",
-        "https://michaelsikorski.github.io/BuyOldGames/styles.a65fa9cbccc99c62.css"
+        "https://michaelsikorski.github.io/BuyOldGames/styles.4b3cb03886580fbf.css"
       ],
       "patterns": []
     },
@@ -30,6 +30,8 @@
       },
       "urls": [
         "https://michaelsikorski.github.io/BuyOldGames/assets/cart.jpg",
+        "https://michaelsikorski.github.io/BuyOldGames/assets/empty_cart.jpg",
+        "https://michaelsikorski.github.io/BuyOldGames/assets/empty_cart.png",
         "https://michaelsikorski.github.io/BuyOldGames/assets/game_imgs/623b658ff439cd87206fef41.jpg",
         "https://michaelsikorski.github.io/BuyOldGames/assets/game_imgs/623b663af439cd87206fef42.jpg",
         "https://michaelsikorski.github.io/BuyOldGames/assets/game_imgs/623b6657f439cd87206fef43.jpg",
@@ -74,6 +76,8 @@
   "dataGroups": [],
   "hashTable": {
     "https://michaelsikorski.github.io/BuyOldGames/assets/cart.jpg": "5cdcda4f43885e5e7d3e42b40a2bb3d74659c8a3",
+    "https://michaelsikorski.github.io/BuyOldGames/assets/empty_cart.jpg": "f4813280df1ac84c607dc3a198c30a02551d81a4",
+    "https://michaelsikorski.github.io/BuyOldGames/assets/empty_cart.png": "e12eb9aa0d5b6b36bc32ae468dfa4d085ce87eb9",
     "https://michaelsikorski.github.io/BuyOldGames/assets/game_imgs/623b658ff439cd87206fef41.jpg": "917fd9704194f1781d1ea733613d49be708fc5fb",
     "https://michaelsikorski.github.io/BuyOldGames/assets/game_imgs/623b663af439cd87206fef42.jpg": "6bda593e29ba373d96184f8bc4e0c8e6fd6600ed",
     "https://michaelsikorski.github.io/BuyOldGames/assets/game_imgs/623b6657f439cd87206fef43.jpg": "db3030f56933be539c8d81dab3a596c40fa57884",
@@ -111,13 +115,13 @@
     "https://michaelsikorski.github.io/BuyOldGames/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://michaelsikorski.github.io/BuyOldGames/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://michaelsikorski.github.io/BuyOldGames/assets/logo.jpg": "79423cd1609852c839d7fea63e84550410365fd5",
-    "https://michaelsikorski.github.io/BuyOldGames/favicon.ico": "a59a49684607dbaa1b9b149a08de15fb4730ed42",
-    "https://michaelsikorski.github.io/BuyOldGames/index.html": "7c4df437d1a787b2708302428274fd2106b03d16",
-    "https://michaelsikorski.github.io/BuyOldGames/main.badff044e5bcf523.js": "6719151284d4981721a9068c284980351217aa97",
+    "https://michaelsikorski.github.io/BuyOldGames/favicon.ico": "741efb091fd85e6e32e29cf81bb260036267d016",
+    "https://michaelsikorski.github.io/BuyOldGames/index.html": "900734fea688f617ba2118f57fbb49aec9c65bab",
+    "https://michaelsikorski.github.io/BuyOldGames/main.a528228117537550.js": "06fa7c1c5a8250b5e67121cb5919a3674397db8e",
     "https://michaelsikorski.github.io/BuyOldGames/manifest.webmanifest": "52c2982ea3410ac266e90e632745334d09ed71a5",
     "https://michaelsikorski.github.io/BuyOldGames/polyfills.196dfa03b50ba6cb.js": "a61395955ca56fc2891b6c5a33b757690637298f",
     "https://michaelsikorski.github.io/BuyOldGames/runtime.6b86532ecaf8dff0.js": "df6e0827cbcc2814ced4d1a0e07d7300e8648875",
-    "https://michaelsikorski.github.io/BuyOldGames/styles.a65fa9cbccc99c62.css": "1254deaf994c6329fb5400966882fa80facbf61c"
+    "https://michaelsikorski.github.io/BuyOldGames/styles.4b3cb03886580fbf.css": "80959626861480c4df4e1e2b036669a587262632"
   },
   "navigationUrls": [
     {

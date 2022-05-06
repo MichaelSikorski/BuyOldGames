@@ -8,8 +8,16 @@ import { Game } from '../models/Game';
   styleUrls: ['./view-cart.component.css']
 })
 export class ViewCartComponent implements OnInit {
+	
+	emptyCartSrc: String = "";
 
   constructor(private cart: CartService) { 
+  
+	if (isDevMode()) {	// Application run locally with ng serve
+		this.emptyCartSrc = "../../assets/empty_cart.png";	
+	} else {	// Application running on Github Pages
+		this.emptyCartSrc = "assets/empty_cart.png";
+	}
   
   }
 

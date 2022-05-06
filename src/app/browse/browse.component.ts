@@ -15,6 +15,8 @@ export class BrowseComponent implements OnInit {
 	filter: string | null = "all";
 	browseHeading: string | null = null;
 	showAddtoCart: boolean = false;
+	showGameDetailsModal: boolean = false;
+	focusedGame: Game | null = null;
 	
 	listOfGames:any = null;
 	firstLetters:Array<String> | null = null;
@@ -27,6 +29,7 @@ export class BrowseComponent implements OnInit {
 			this.sortType = params['by'];
 			if (!this.listOfGames) {
 				this.getListOfGames();
+				this.sortTitles(this.sortType);
 			} else {
 				this.sortTitles(this.sortType);
 				if (this.filter == 'all') {
@@ -112,13 +115,13 @@ export class BrowseComponent implements OnInit {
 			});
 
 			if (!this.firstLetters) {
-			this.firstLetters = new Array<String>();
-			for (let game of this.listOfGames) {
-				if (!this.firstLetters.includes(game.title.charAt(0))) {
-					this.firstLetters.push(game.title.charAt(0));
+				this.firstLetters = new Array<String>();
+				for (let game of this.listOfGames) {
+					if (!this.firstLetters.includes(game.title.charAt(0))) {
+						this.firstLetters.push(game.title.charAt(0));
+					}
 				}
 			}
-		}
 
 		} else if (by == 'platform') {
 			this.listOfGames.sort((a?: Game,b?: Game) => {
@@ -207,8 +210,29 @@ export class BrowseComponent implements OnInit {
 		return "";
 	}
 	
+	focusedBoxArt(): String {
+		if (this.focusedGame == null) {
+			return "";
+		} else {
+			let srcUrl = "";
+			if (isDevMode()) {	// Application run locally with ng serve
+				srcUrl = "../../../assets/game_imgs/";	
+			} else {	// Application running on Github Pages
+				srcUrl = "assets/game_imgs/";
+			}
+			srcUrl += this.focusedGame._id + ".jpg";	// Image files names are the same as the game's ID in the database
+			
+			return srcUrl;
+		}
+	}
+	
 	addToCart(game: Game): void {
 		this.cart.addToCart(game);		
+	}
+	
+	addToCartFromModal(game: Game): void {
+		this.cart.addToCart(game);
+		this.showGameDetailsModal = false;
 	}
 	
 	cartContainsGame(game: Game): boolean {
@@ -216,6 +240,7 @@ export class BrowseComponent implements OnInit {
 	}
 	
 	isInStock(game: Game): boolean {
+		
 		let inStock = false;
 		for (let i=0; i<this.listOfGames.length; i++) {
 			if (this.listOfGames[i]._id == game._id) {
@@ -231,6 +256,11 @@ export class BrowseComponent implements OnInit {
 	
 	removeFromCart(game: Game): void {
 		this.cart.removeFromCart(game);
+	}
+	
+	removeFromCartFromModal(game: Game): void {
+		this.cart.removeFromCart(game);
+		this.showGameDetailsModal = false;
 	}
 	
 	searchTitles(game: Game): boolean {	// Search for games matching the search string by title, platform, or genre
@@ -250,5 +280,12 @@ export class BrowseComponent implements OnInit {
 		return false;
 	}
 	
-
+	toggleGameDetailsModal(game: Game) {
+		this.showGameDetailsModal = !this.showGameDetailsModal;
+		this.focusedGame = game;
+	}
+	
+	hideModal() {
+		this.showGameDetailsModal = false;
+	}
 }

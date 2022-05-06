@@ -1,3 +1,8 @@
+h2 {
+	text-align: center;
+	padding-top: 15px;
+}
+
 td {
 	padding: 5px 15px;
 	max-width: 150px;
@@ -11,8 +16,9 @@ th {
 thead {
 	position: sticky;
 	top: 0;
-	background: black;
-	color: white;
+	background: white;
+	/* background: #B3B3B3; */
+	color: black;
 }
 
 table {
@@ -24,4 +30,15 @@ table {
 	font-weight: bold;
 	font-size: 125%;
 	text-align: right;
+}
+
+tr:nth-child(2n+1) > td:not(:last-child) {
+	background-color: rgba(242,188,0,0.7);
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+	max-width: 90vw;
+	max-height: 40vh;
 }

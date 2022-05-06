@@ -1,0 +1,6 @@
+mat-toolbar {
+	display: block;
+	padding: 15px;
+	height: fit-content;
+	white-space: normal;
+}

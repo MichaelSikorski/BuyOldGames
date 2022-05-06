@@ -1,47 +1,24 @@
 
-.project_header #logo {
-	float: left;
-}
-
-.project_header img {
-	float: left;
-	width: 100px;
-	height: 25px;
-	margin-right: 10px;
-}
-
-.project_header #cart {
-	float: right;
-	margin-left: 15px;
-}
-
-#header_links {
-	float: left;
-	margin-left: 45px;
-}
-
-#searchbox {
-	float: right;
-	margin-left: 25px;
-}
-
 #welcome1, #welcome2 {
 	font-size: 1.25rem;
 	text-align: left;
-	padding: 25px;
+	padding: 1rem;
 }
 
 h1, h2 {
 	font-weight: bold;
 }
 
-#welcome1 img {
-	height: 250px;
+img {
+	max-width: 90%;
+	max-height: 250px;
 }
 
 #welcome2 {
-	background-color: rgba(242,188,0,0.7);
-	max-width: 85%;
+	border-radius: 25px;
+	background-color: rgb(242,188,0);
+	max-width: 75vw;
+	margin-bottom: 25px;
 }
 
 #welcome2 a {

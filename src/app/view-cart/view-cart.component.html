@@ -1,14 +1,15 @@
 <ng-container *ngIf="getCartSize() == 0">
 	<h2>Shopping cart is empty!</h2>
+	<img [src]="emptyCartSrc" alt="">
 </ng-container>
 
 <ng-container *ngIf="getCartSize() > 0">
 	<h2>Your shopping cart contains the following items: </h2>
-	
+		
 	<table class="table table-striped border mt-1">
 		<thead>
 			<tr>
-				<th scope="col"></th>
+				<th scope="col" aria-hidden="true"></th>
 				<th scope="col">Title</th>
 				<th scope="col">Platform</th>
 				<th scope="col">Genre</th>
@@ -18,19 +19,23 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let game of getCartItems()" >
-				<td><img style="width:100px" [src]="boxArt(game)"/></td>
+				<td><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
 				<td>{{game.title}}</td> 
 				<td>{{game.platform}}</td>
 				<td>{{game.genre}}</td>
 				<td>{{game.release | date:'yyyy' }}</td>
 				<td>${{game.price}}</td>
 
-				<td><button (click)="removeFromCart(game)" >Remove from Cart</button></td>
+				<td><button (click)="removeFromCart(game)" >Remove</button></td>
 
 			</tr>
+			
+		</tbody>
+		<tfoot>
 			<tr class="subtotal">
 				<td colspan="6">Subtotal: {{ getSubtotal() | currency }}</td>
 			</tr>
-		</tbody>
+		</tfoot>
 	</table>
+	
 </ng-container>

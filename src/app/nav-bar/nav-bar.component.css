@@ -1,10 +1,14 @@
+#toolbarWrapper {
+	background-color: rgb(255,255,255);
+}
+
 mat-toolbar {
 	flex-wrap: wrap;
-	max-width: 1024px;
 	margin: 0 auto;
 	height: auto;
-	background-color: rgba(0,0,0,0);
 	justify-content: space-between;
+	max-width: 1024px;
+	background-color: rgb(255,255,255);
 }
 
 #logo {
@@ -39,21 +43,22 @@ mat-toolbar {
 }
 
 #cart {
-	margin-top: 10px;
-	margin-right: 10px;
+	/* margin-top: 10px;
+	margin-right: 10px; */
+	padding: 10px;
 	order: 4;
 }
 
 #cart button {
-	height: 55px;
-	width: 55px;
+	height: 25px;
+	width: 25px;
 	background-repeat: no-repeat;
 	background-color: rgba(0,0,0,0);
-	background-size: 50px;
+	background-size: 25px;
 	border: none;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 930px) {
 	mat-toolbar {
 		flex-direction: column;
 	}
@@ -61,4 +66,19 @@ mat-toolbar {
 		justify-content: center;
 		margin-bottom: 15px;
 	}
+	#cart button {
+		height: 40px;
+		width: 40px;
+		background-size: 40px;
+	}
+	.searchbox form input {
+		height: 26px;
+		font-size: 18px;
+		vertical-align: middle;
+		max-width: 70vw;
+	}
+	.searchbox form button {
+		height: 32px;
+	}
+	
 }

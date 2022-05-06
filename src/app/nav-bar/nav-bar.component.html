@@ -1,36 +1,39 @@
-<mat-toolbar role="navigation">
-	<div id="logo">
-		<a href="" [routerLink]="['./']" ><img [src]="logoSrc" width="100px" alt="Buy Old Games logo"/></a>
-		<span>
-	<pre style="line-height:1.5rem">
-Buy
+<div id="toolbarWrapper">
+	<mat-toolbar role="navigation">
+		<div id="logo">
+			<a href="" [routerLink]="['./']" ><img [src]="logoSrc" width="100px" alt="Buy Old Games logo"/></a>
+			<span>
+		
+<pre style="line-height:1.5rem">Buy
 Old
 Games</pre>
-		</span>
-	</div>
-	
-	<div class="header_links">
-	<span>Browse by: </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'name'}" >Name</a><span> / </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'platform'}" >Platform</a><span> / </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'genre'}" >Genre</a><span> / </span>
-		<a href="" [routerLink]="['./browse']" [queryParams]="{by:'release'}" >Release Date</a>
-	</div>
-	
-	<div class="searchbox">
-		<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-		  <input name="searchstring" type="text" ngModel required #searchstring="ngModel">
-		  <button>Search</button>
-		</form>
-	</div>
-	<div id="cart">
-			<!--<a [routerLink]="['./cart']">View Cart ({{ itemsInCart }})</a>-->
-			<!--<img matBadge="2" matBadgeOverlap="true" matBadgeColor="warn" [src]="cartSrc" width="50"/>-->
-			<a href="" [routerLink]="['./cart']" alt="View cart">
-				<button [ngStyle]="{'background-image': 'url(' + cartSrc + ')'}" matBadge="{{itemsInCart}}" matBadgeOverlap="false" matBadgeColor="accent">
-				</button>
-			</a>
-			<!--<a [routerLink]="['./cart']">View Cart (0)</a>-->
+			</span>
 		</div>
-	
-</mat-toolbar>
+		
+		<div class="header_links">
+		<span>Browse by: </span>
+			<a href="" [routerLink]="['./browse']" [queryParams]="{by:'name'}" >Name</a><span> / </span>
+			<a href="" [routerLink]="['./browse']" [queryParams]="{by:'platform'}" >Platform</a><span> / </span>
+			<a href="" [routerLink]="['./browse']" [queryParams]="{by:'genre'}" >Genre</a><span> / </span>
+			<a href="" [routerLink]="['./browse']" [queryParams]="{by:'release'}" >Release Date</a>
+		</div>
+		
+		<div class="searchbox">
+			<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+			  <!-- <input name="searchstring" type="text" ngModel required #searchstring="ngModel"> -->
+			  <input name="searchstring" type="text" ngModel placeholder="Search for a game" #searchstring="ngModel" aria-label="Search for a game">
+			  <button>Search</button>
+			</form>
+		</div>
+		<div id="cart">
+				<!--<a [routerLink]="['./cart']">View Cart ({{ itemsInCart }})</a>-->
+				<!--<img matBadge="2" matBadgeOverlap="true" matBadgeColor="warn" [src]="cartSrc" width="50"/>-->
+				<a href="" [routerLink]="['./cart']" alt="View cart" aria-label="View cart">
+					<button [ngStyle]="{'background-image': 'url(' + cartSrc + ')'}" matBadge="{{itemsInCart}}" matBadgeOverlap="false" matBadgeColor="accent" matBadgeSize="medium" tabindex="-1" aria-hidden="true">
+					</button>
+				</a>
+				<!--<a [routerLink]="['./cart']">View Cart (0)</a>-->
+			</div>
+		
+	</mat-toolbar>
+</div>

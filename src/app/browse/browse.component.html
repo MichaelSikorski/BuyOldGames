@@ -1,29 +1,29 @@
 
 <ng-container *ngIf="sortType == 'name'">
-	<div style="margin-top:25px;">
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'name'}" [fragment]="'all'">All Letters</a>
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'name'}" [fragment]="''+letter" *ngFor="let letter of firstLetters">{{ letter }}</a>
+	<div class="gameFilters">
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'name'}" [fragment]="'all'">All Letters</a>
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'name'}" [fragment]="''+letter" *ngFor="let letter of firstLetters">{{ letter }}</a>
 	</div>
 </ng-container>
 
 <ng-container *ngIf="sortType == 'platform'">
-	<div style="margin-top:25px;">
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'platform'}" [fragment]="'all'">All Platforms</a>
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'platform'}" [fragment]="''+platform" *ngFor="let platform of listOfPlatforms">{{ platform }}</a>
+	<div class="gameFilters">
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'platform'}" [fragment]="'all'">All Platforms</a>
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'platform'}" [fragment]="''+platform" *ngFor="let platform of listOfPlatforms">{{ platform }}</a>
 	</div>
 </ng-container>
 
 <ng-container *ngIf="sortType == 'genre'">
-	<div style="margin-top:25px;">
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'genre'}" [fragment]="'all'">All Genres</a>
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'genre'}" [fragment]="''+genre" *ngFor="let genre of listOfGenres">{{ genre }}</a>
+	<div class="gameFilters">
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'genre'}" [fragment]="'all'">All Genres</a>
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'genre'}" [fragment]="''+genre" *ngFor="let genre of listOfGenres">{{ genre }}</a>
 	</div>
 </ng-container>
 
 <ng-container *ngIf="sortType == 'release'">
-	<div style="margin-top:25px;">
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'release'}" [fragment]="'all'">All Release Dates</a>
-		<a class="linkFilters" [routerLink]="['./']" [queryParams]="{by:'release'}" [fragment]="''+(release | date:'yyyy')" *ngFor="let release of listOfDates">{{ release | date:'yyyy'}}</a>
+	<div class="gameFilters">
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'release'}" [fragment]="'all'">All Release Dates</a>
+		<a class="filterLinks" [routerLink]="['./']" [queryParams]="{by:'release'}" [fragment]="''+(release | date:'yyyy')" *ngFor="let release of listOfDates">{{ release | date:'yyyy'}}</a>
 	</div>
 </ng-container>
 
@@ -32,9 +32,9 @@
 <div *ngIf="sortType == 'name' ">
 
 	<table #listTable class="table table-striped border mt-1">
-		<thead>
+		<thead class="fullGameDetails">
 			<tr>
-				<th scope="col"></th>
+				<th scope="col" aria-hidden="true"></th>
 				<th scope="col">Title</th>
 				<th scope="col">Platform</th>
 				<th scope="col">Genre</th>
@@ -42,35 +42,36 @@
 				<th scope="col">Price</th>
 			</tr>
 		</thead>
-		<tbody>
-			
-			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.title.charAt(0))" >
-				<td><img style="width:100px" [src]="boxArt(game)"/></td>
-				<td>{{game.title}}</td> 
-				<td>{{game.platform}}</td>
-				<td>{{game.genre}}</td>
-				<td>{{game.release | date:'yyyy' }}</td>
-				<td>${{game.price}}</td>
-				
+		<tbody>		
+			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.title.charAt(0))">		
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)">{{game.title}}</td>
+				<td class="fullGameDetails"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="fullGameDetails">{{game.title}}</td>
+				<td class="fullGameDetails">{{game.platform}}</td>
+				<td class="fullGameDetails">{{game.genre}}</td>
+				<td class="fullGameDetails">{{game.release | date:'yyyy' }}</td>
+				<td class="fullGameDetails">${{game.price}}</td>
+							
 				<ng-container *ngIf="isInStock(game) == true">				
 					<ng-container *ngIf="!cartContainsGame(game)">
-						<td><button (click)="addToCart(game)" >Add to Cart</button></td>
+						<td class="fullGameDetails addtoCartBtn"><button (click)="addToCart(game)" >Add to Cart</button></td>
 					</ng-container>
 				</ng-container>
 				
 				<ng-container *ngIf="isInStock(game) == false">
-					<td class="alwaysShow">
-						<p style="color:red;">Out of Stock!</p>
+					<td class="fullGameDetails alwaysShow">
+						<p style="color:#a5001d;">Out of Stock!</p>
 					</td>
 				</ng-container>
 				
 				<ng-container *ngIf="cartContainsGame(game)">
 					<td class="alwaysShow">
-						<button (click)="removeFromCart(game)" >Remove from Cart</button>
+						<button (click)="removeFromCart(game)" >Remove</button>
 					</td>
-				</ng-container>
-				
+				</ng-container>	
 			</tr>
+			
 		</tbody>
 	</table>
 </div>
@@ -78,9 +79,53 @@
 <div *ngIf="sortType == 'platform' ">
 
 	<table #listTable class="table table-striped border mt-1">
+		<thead class="fullGameDetails">
+			<tr>
+				<th scope="col" aria-hidden="true"></th>
+				<th scope="col">Title</th>
+				<th scope="col">Platform</th>
+				<th scope="col">Genre</th>
+				<th scope="col">Release Date</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>		
+			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.platform)">		
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)">{{game.title}}</td>
+				<td class="fullGameDetails"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="fullGameDetails">{{game.title}}</td>
+				<td class="fullGameDetails">{{game.platform}}</td>
+				<td class="fullGameDetails">{{game.genre}}</td>
+				<td class="fullGameDetails">{{game.release | date:'yyyy' }}</td>
+				<td class="fullGameDetails">${{game.price}}</td>
+							
+				<ng-container *ngIf="isInStock(game) == true">				
+					<ng-container *ngIf="!cartContainsGame(game)">
+						<td class="fullGameDetails addtoCartBtn"><button (click)="addToCart(game)" >Add to Cart</button></td>
+					</ng-container>
+				</ng-container>
+				
+				<ng-container *ngIf="isInStock(game) == false">
+					<td class="fullGameDetails alwaysShow">
+						<p style="color:#a5001d;">Out of Stock!</p>
+					</td>
+				</ng-container>
+				
+				<ng-container *ngIf="cartContainsGame(game)">
+					<td class="alwaysShow">
+						<button (click)="removeFromCart(game)" >Remove</button>
+					</td>
+				</ng-container>	
+			</tr>
+			
+		</tbody>
+	</table>
+
+	<!-- <table #listTable class="table table-striped border mt-1">
 		<thead>
 			<tr>
-				<th scope="col"></th>
+				<th scope="col" aria-hidden="true"></th>
 				<th scope="col">Title</th>
 				<th scope="col">Platform</th>
 				<th scope="col">Genre</th>
@@ -90,7 +135,7 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.platform)">
-				<td><img style="width:100px" [src]="boxArt(game)"/></td>
+				<td><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
 				<td>{{game.title}}</td> 
 				<td>{{game.platform}}</td>
 				<td>{{game.genre}}</td>
@@ -111,20 +156,64 @@
 				
 				<ng-container *ngIf="cartContainsGame(game)">
 					<td class="alwaysShow">
-						<button (click)="removeFromCart(game)" >Remove from Cart</button>
+						<button (click)="removeFromCart(game)" >Remove</button>
 					</td>
 				</ng-container>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 </div>
 
 <div *ngIf="sortType == 'genre' ">
 
 	<table #listTable class="table table-striped border mt-1">
+		<thead class="fullGameDetails">
+			<tr>
+				<th scope="col" aria-hidden="true"></th>
+				<th scope="col">Title</th>
+				<th scope="col">Platform</th>
+				<th scope="col">Genre</th>
+				<th scope="col">Release Date</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>		
+			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.genre)">		
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)">{{game.title}}</td>
+				<td class="fullGameDetails"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="fullGameDetails">{{game.title}}</td>
+				<td class="fullGameDetails">{{game.platform}}</td>
+				<td class="fullGameDetails">{{game.genre}}</td>
+				<td class="fullGameDetails">{{game.release | date:'yyyy' }}</td>
+				<td class="fullGameDetails">${{game.price}}</td>
+							
+				<ng-container *ngIf="isInStock(game) == true">				
+					<ng-container *ngIf="!cartContainsGame(game)">
+						<td class="fullGameDetails addtoCartBtn"><button (click)="addToCart(game)" >Add to Cart</button></td>
+					</ng-container>
+				</ng-container>
+				
+				<ng-container *ngIf="isInStock(game) == false">
+					<td class="fullGameDetails alwaysShow">
+						<p style="color:#a5001d;">Out of Stock!</p>
+					</td>
+				</ng-container>
+				
+				<ng-container *ngIf="cartContainsGame(game)">
+					<td class="alwaysShow">
+						<button (click)="removeFromCart(game)" >Remove</button>
+					</td>
+				</ng-container>	
+			</tr>
+			
+		</tbody>
+	</table>
+
+	<!-- <table #listTable class="table table-striped border mt-1">
 		<thead>
 			<tr>
-				<th scope="col"></th>
+				<th scope="col" aria-hidden="true"></th>
 				<th scope="col">Title</th>
 				<th scope="col">Platform</th>
 				<th scope="col">Genre</th>
@@ -135,7 +224,7 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.genre)">
-				<td><img style="width:100px" [src]="boxArt(game)"/></td>
+				<td><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
 				<td>{{game.title}}</td>
 				<td>{{game.platform}}</td>
 				<td>{{game.genre}}</td>
@@ -156,20 +245,64 @@
 				
 				<ng-container *ngIf="cartContainsGame(game)">
 					<td class="alwaysShow">
-						<button (click)="removeFromCart(game)" >Remove from Cart</button>
+						<button (click)="removeFromCart(game)" >Remove</button>
 					</td>
 				</ng-container>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 </div>
 
 <div *ngIf="sortType == 'release' ">
 
 	<table #listTable class="table table-striped border mt-1">
+		<thead class="fullGameDetails">
+			<tr>
+				<th scope="col" aria-hidden="true"></th>
+				<th scope="col">Title</th>
+				<th scope="col">Platform</th>
+				<th scope="col">Genre</th>
+				<th scope="col">Release Date</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>		
+			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.release)">	
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)">{{game.title}}</td>
+				<td class="fullGameDetails"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="fullGameDetails">{{game.title}}</td>
+				<td class="fullGameDetails">{{game.platform}}</td>
+				<td class="fullGameDetails">{{game.genre}}</td>
+				<td class="fullGameDetails">{{game.release | date:'yyyy' }}</td>
+				<td class="fullGameDetails">${{game.price}}</td>
+							
+				<ng-container *ngIf="isInStock(game) == true">				
+					<ng-container *ngIf="!cartContainsGame(game)">
+						<td class="fullGameDetails addtoCartBtn"><button (click)="addToCart(game)" >Add to Cart</button></td>
+					</ng-container>
+				</ng-container>
+				
+				<ng-container *ngIf="isInStock(game) == false">
+					<td class="fullGameDetails alwaysShow">
+						<p style="color:#a5001d;">Out of Stock!</p>
+					</td>
+				</ng-container>
+				
+				<ng-container *ngIf="cartContainsGame(game)">
+					<td class="alwaysShow">
+						<button (click)="removeFromCart(game)" >Remove</button>
+					</td>
+				</ng-container>	
+			</tr>
+			
+		</tbody>
+	</table>
+
+	<!-- <table #listTable class="table table-striped border mt-1">
 		<thead>
 			<tr>
-				<th scope="col"></th>
+				<th scope="col" aria-hidden="true"></th>
 				<th scope="col">Title</th>
 				<th scope="col">Platform</th>
 				<th scope="col">Genre</th>
@@ -179,7 +312,7 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let game of listOfGames" [hidden]="filterTitles(game.release)">
-				<td><img style="width:100px" [src]="boxArt(game)"/></td>
+				<td><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
 				<td>{{game.title}}</td> 
 				<td>{{game.platform}}</td>
 				<td>{{game.genre}}</td>
@@ -200,20 +333,64 @@
 				
 				<ng-container *ngIf="cartContainsGame(game)">
 					<td class="alwaysShow">
-						<button (click)="removeFromCart(game)" >Remove from Cart</button>
+						<button (click)="removeFromCart(game)" >Remove</button>
 					</td>
 				</ng-container>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 </div>
 
 <div *ngIf="sortType == 'search' ">
 
 	<table #listTable class="table table-striped border mt-1">
+		<thead class="fullGameDetails">
+			<tr>
+				<th scope="col" aria-hidden="true"></th>
+				<th scope="col">Title</th>
+				<th scope="col">Platform</th>
+				<th scope="col">Genre</th>
+				<th scope="col">Release Date</th>
+				<th scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>		
+			<tr *ngFor="let game of listOfGames" [hidden]="!searchTitles(game)" >
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="modalActivator" (click)="toggleGameDetailsModal(game)">{{game.title}}</td>
+				<td class="fullGameDetails"><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
+				<td class="fullGameDetails">{{game.title}}</td>
+				<td class="fullGameDetails">{{game.platform}}</td>
+				<td class="fullGameDetails">{{game.genre}}</td>
+				<td class="fullGameDetails">{{game.release | date:'yyyy' }}</td>
+				<td class="fullGameDetails">${{game.price}}</td>
+							
+				<ng-container *ngIf="isInStock(game) == true">				
+					<ng-container *ngIf="!cartContainsGame(game)">
+						<td class="fullGameDetails addtoCartBtn"><button (click)="addToCart(game)" >Add to Cart</button></td>
+					</ng-container>
+				</ng-container>
+				
+				<ng-container *ngIf="isInStock(game) == false">
+					<td class="fullGameDetails alwaysShow">
+						<p style="color:#a5001d;">Out of Stock!</p>
+					</td>
+				</ng-container>
+				
+				<ng-container *ngIf="cartContainsGame(game)">
+					<td class="alwaysShow">
+						<button (click)="removeFromCart(game)" >Remove</button>
+					</td>
+				</ng-container>	
+			</tr>
+			
+		</tbody>
+	</table>
+
+	<!-- <table #listTable class="table table-striped border mt-1">
 		<thead>
 			<tr>
-				<th scope="col"></th>
+				<th scope="col" aria-hidden="true"></th>
 				<th scope="col">Title</th>
 				<th scope="col">Platform</th>
 				<th scope="col">Genre</th>
@@ -224,7 +401,7 @@
 		<tbody>
 			
 			<tr *ngFor="let game of listOfGames" [hidden]="!searchTitles(game)" >
-				<td><img style="width:100px" [src]="boxArt(game)"/></td>
+				<td><img style="width:100px" [src]="boxArt(game)" alt=""/></td>
 				<td>{{game.title}}</td> 
 				<td>{{game.platform}}</td>
 				<td>{{game.genre}}</td>
@@ -245,11 +422,49 @@
 				
 				<ng-container *ngIf="cartContainsGame(game)">
 					<td class="alwaysShow">
-						<button (click)="removeFromCart(game)" >Remove from Cart</button>
+						<button (click)="removeFromCart(game)" >Remove</button>
 					</td>
 				</ng-container>
 				
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 </div>
+
+<div [class.modalShown]="showGameDetailsModal" [class.modalHidden]="!showGameDetailsModal">
+	<div class="modalContents">
+		<div>
+			<span class="closeModalBtn" (click)="hideModal()">×</span>
+		</div>
+		<img [src]="focusedBoxArt()" alt=""/>
+		<p>Title: {{focusedGame?.title}}</p> 
+		<p>Platform: {{focusedGame?.platform}}</p>
+		<p>Genre: {{focusedGame?.genre}}</p>
+		<p>Release Date: {{focusedGame?.release | date:'yyyy' }}</p>
+		<p>Price: ${{focusedGame?.price}}</p>
+		
+		<ng-container *ngIf="focusedGame">
+			<ng-container *ngIf="isInStock(focusedGame) == true">
+				<ng-container *ngIf="!cartContainsGame(focusedGame)">
+					<button (click)="addToCartFromModal(focusedGame)">Add to Cart</button>
+				</ng-container>
+			</ng-container>
+			<ng-container *ngIf="isInStock(focusedGame) == false">		
+				<p style="color:red;">Out of Stock!</p>			
+			</ng-container>
+		
+			<ng-container *ngIf="cartContainsGame(focusedGame)">
+				<button (click)="removeFromCartFromModal(focusedGame)">Remove from Cart</button>	
+			</ng-container>
+		</ng-container>	
+		
+	</div>
+</div>
+<!--<div [class.showFullGameDetails]="showGameDetailsModal" [class.hideFullGameDetails]="!showGameDetailsModal" id="displayFullGameDetails">
+	<!-- <img style="width:100px" [src]="boxArt(focusedGame)"/> 
+	<p>{{focusedGame?.title}}</p> 
+	<p>{{focusedGame?.platform}}</p>
+	<p>{{focusedGame?.genre}}</p>
+	<p>{{focusedGame?.release | date:'yyyy' }}</p>
+	<p>${{focusedGame?.price}}</p>
+</div>-->

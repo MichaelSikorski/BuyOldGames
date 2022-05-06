@@ -16,6 +16,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ViewCartComponent } from './view-cart/view-cart.component';
+import { PortfolioFooterComponent } from './portfolio-footer/portfolio-footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ViewCartComponent } from './view-cart/view-cart.component';
     HomeComponent,
     BrowseComponent,
     NavBarComponent,
-    ViewCartComponent
+    ViewCartComponent,
+    PortfolioFooterComponent
   ],
   imports: [
     BrowserModule,

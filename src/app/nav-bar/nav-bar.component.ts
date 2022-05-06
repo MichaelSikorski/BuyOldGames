@@ -42,6 +42,7 @@ export class NavBarComponent implements OnInit, OnDestroy {
 	
 	onSubmit(f: NgForm) {
 		this.router.navigateByUrl('/browse?by=search#' + f.value.searchstring);
+		f.resetForm();
 	}
 
 }
